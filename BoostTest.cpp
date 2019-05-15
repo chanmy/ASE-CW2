@@ -8,17 +8,41 @@
 
 using namespace ExactArithmetic;
 
-Rational rational1 = Rational(1, 3);
-Rational rational2 = Rational(1, 3);
-
-BOOST_AUTO_TEST_SUITE(simple_operation)
-BOOST_AUTO_TEST_CASE(addition_test)
+BOOST_AUTO_TEST_SUITE(arithmethic_operation)
+BOOST_AUTO_TEST_CASE(addition)
 {
-	int num1, ;
-	int denom;
-	
+	int num1 = 1, num2 = 1, numResult = 2;
+	int denom1 = 3, denom2 = 3, denomResult = 3;
 
-	BOOST_CHECK_EQUAL(rational1 + rational2, result);
+	Rational test = Rational(num1 * denom2 + denom1 * num2, denom1 * denom2);
+	Rational result = Rational(numResult, denomResult);
+	BOOST_CHECK_EQUAL(test, result);
 }
+BOOST_AUTO_TEST_CASE(subtraction)
+{
+	int num1 = 1, num2 = 1, numResult = 0;
+	int denom1 = 3, denom2 = 3, denomResult = 1;
 
+	Rational test = Rational(num1 * denom2 - denom1 * num2, denom1 * denom2);
+	Rational result = Rational(numResult, denomResult);
+	BOOST_CHECK_EQUAL(test, result);
+}
+BOOST_AUTO_TEST_CASE(multiplication)
+{
+	int num1 = 1, num2 = 1, numResult = 1;
+	int denom1 = 3, denom2 = 3, denomResult = 9;
+
+	Rational test = Rational(num1 * num2, denom1 * denom2);
+	Rational result = Rational(numResult, denomResult);
+	BOOST_CHECK_EQUAL(test, result);
+}
+BOOST_AUTO_TEST_CASE(division)
+{
+	int num1 = 1, num2 = 1, numResult = 1;
+	int denom1 = 3, denom2 = 3, denomResult = 1;
+
+	Rational test = Rational(num1 * denom2, denom1 * num2);
+	Rational result = Rational(numResult, denomResult);
+	BOOST_CHECK_EQUAL(test, result);
+}
 BOOST_AUTO_TEST_SUITE_END()
